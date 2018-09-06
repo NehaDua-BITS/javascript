@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		
+	var array = ["neha dua", 27, "bangalore", "endurance", 103];
+	
+	//1. Get element at particular index	
+	document.write("At index 2 : ", array[2], "<br/>");
+	
+	//2. Iterate
+	for (var index in array)
+		document.write(array[index] + " ,");
+	
+	document.write("<br/><br/>Another loop iterating way : ".fontcolor("red"), "<br/>");
+	for (var i = 0; i < array.length; i++)
+		document.write(array[i] + " ,");
+		
+	//3. Splicing in array : adds/removes elements to/from the array
+	//Output: modifies original array
+	//Returns: array containing removed elements
+	var vegetables = ["onion", "tomato", "beetroot", "ginger", "lemon"];
+	var removedItems = vegetables.splice(1, 2, "coriander", "potato", "raddish");   //starts at index 1, removes 2 elements from there and inserts
+	document.write("<br/>Spliced array : ", vegetables);    //onion,coriander,potato,raddish,ginger,lemon 
+	document.write("<br/>Removed items : ", removedItems);
+	
+	removedItems = vegetables.splice(1, 0, "a", "b");   //starts at index 1, removes 0 elements from there and inserts
+	document.write("<br/>Spliced array : ", vegetables.valueOf());    //onion,coriander,potato,raddish,ginger,lemon 
+	document.write("<br/>Removed items : ", removedItems);
+	
+	//4. Join elements in array using particular delimeter
+	document.write("<br/>Joined values : ", vegetables.join(" ; "));
+				
+	//5. Remove items from array using splice
+	vegetables.splice(4, 2);
+	document.write("<br/>Array after removal : ", vegetables);
+			
+	//6. Sort and Reverse Sort values to get reverse sorted array based on alphabetical order
+	document.write("<br/>Sorted array : ", vegetables.sort());
+	document.write("<br/>Reverse Sorted array : ", vegetables.reverse());   //reverse sort an array
+	
+	//7. Delete particular index
+	delete vegetables[2];
+	document.write("<br/>Array after deletion : ", vegetables);
+				
+	//8. Sort numbers like strings
+	var numArray = [38, 15, 29, 55, 22, 58, 5, 6];
+	document.write("<br/>Sorted number array like strings : ", numArray.sort());  //sort function by default sorts based on alphabetical/chronological/dictionary order
+	document.write("<br/>Reverse array : ", numArray.reverse());  //sort function by default sorts based on alphabetical/chronological/dictionary order
+	
+	//9. Sort numbers in increasing order
+	document.write("<br/>Sorted array in increasing order : ", numArray.sort(function(x,y){return x-y}));
+	document.write("<br/>Sorted array in decreasing order : ", numArray.sort(function(x,y){return y-x}));
+
+	//10. Combine/concat arrays
+	document.write("<br/>Combined arrays : ", numArray.concat(vegetables));  //doesn't change original array
+
+	//11. POP last element from array
+	numArray.pop();
+	document.write("<br/>Array after popping (last element): ", numArray);
+
+	//12. PUSH element in last to array
+	numArray.push(80, 90);
+	document.write("<br/>Array after pushing (in last element): ", numArray);
+	
+	//13. Shift element in array -> removes first element
+	numArray.shift();
+	document.write("<br/>Array after shifting/removing (first element): ", numArray);
+
+	//14. Unshift an array
+	numArray.unshift(100, 120);
+	document.write("<br/>Array after unshifting/adding (at first element): ", numArray);
+	
+					
+	</script>
+	
+</body>
+</html>

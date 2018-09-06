@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+	<script>
+//	      document.write([1,2,3] + [4,5,6], "</br>");
+	      var arr = [1,2,3,4];
+	      
+	      //transfroming each element and printing it
+	      arr.map((num) => num*2).forEach(item => document.write(item, "</br>"));
+	      
+	     //newarr.forEach(item => document.write(item, "</br>"));
+	     var cookie = "cookie=abvhskllsfffffffff";
+	     var elements = cookie.split("=");
+	     document.write(elements[0] + "  " + elements[1], "</br>");
+	     
+	     document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+	     
+	     const parseCookies = (cookies = "") =>
+	     {
+	        var mapObj = cookies
+		.split("; ")
+		.map(cookie => cookie.split("="))
+		.reduce((cookieMap, [key, value]) => ({ ...cookieMap, [key]: value }), {});
+		
+			     document.write(JSON.stringify(mapObj) , "</br>");
+			     
+		 return mapObj;
+	      }
+
+	      const getRequestHeaders = () => {
+		let headers = {
+		  "Content-Type": "application/json"
+		};
+		const { csrf } = parseCookies("csrf=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/");
+		document.write(JSON.stringify(csrf) , "</br>");
+
+		if (csrf) {
+		  Object.assign(headers, {
+		    "X-CSRF-TOKEN": csrf
+		  });
+		} else {
+		  console.warn("CSRF is MIA!");
+		}
+		return headers;
+	      };
+	     
+	     var header = getRequestHeaders();
+	     document.write(JSON.stringify(header) , "</br>");
+	      
+	</script>
+	
+</body>
+</html>
+

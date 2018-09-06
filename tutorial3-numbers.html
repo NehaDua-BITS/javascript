@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<p id="helloUser"></p>
+	
+	<script>
+		
+	//1. max and min values that can be stored in javascript
+	document.write("Max Value : ", Number.MAX_VALUE, "<br/>");
+	document.write("Min Value : ", Number.MIN_VALUE, "<br/>");
+
+	//2. precision test: max precision can be 16 digits;beyond 16 digits it gives unexpected results
+	var precisionTest = 0.1100000000000001;
+	document.write("precision test : ", precisionTest + 0.1100000000000001, "<br/>");
+	
+	//3. Rounding off
+	var annualSalary = 1537.99;
+	document.write("Monthly salary : ", annualSalary / 12, "<br/>");
+	document.write("Monthly salary only upto 2 decimal places: ", (annualSalary / 12).toFixed(2), "<br/>");
+	
+	//4. Increment and Decrement Operators
+	var num = 5;
+	document.write("num++ : ", num++, "<br/>");
+	document.write("++num : ", ++num, "<br/>");
+	//document.write("++num++ : ", ++num++, "<br/>"); -> this gives syntax error: missing ')' after args list
+	document.write("num-- : ", num--, "<br/>");
+	document.write("--num : ", --num, "<br/>");
+	
+	//5. Compound assignment operators 
+	document.write("num+=5 : ", num+=5, "<br/>");
+	document.write("num-=5 : ", num-=5, "<br/>");
+	document.write("num*=5 : ", num*=5, "<br/>");
+	document.write("num/=5 : ", num/=5, "<br/>");
+	
+	//6. Hierarchy of operators applied
+	document.write("5 + 3 * 10 = ",5 + 3 * 10, "<br/>");
+	document.write("(5 + 3) * 10 = ",(5 + 3) * 10, "<br/>");
+	
+	
+	</script>
+</body>
+</html>

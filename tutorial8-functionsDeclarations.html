@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<p id="helloUser"></p>
+
+	<script>
+			
+	// function expression
+	var factorial = function (num) {
+		if (num <=1)
+			return 1;
+			
+		return num * factorial(num-1);
+	};
+			
+	var result = factorial(4);		
+	document.write("Factorial : ", result, "<br/>");
+
+	var result = (function factorial(num)
+	{
+		if (num <=1)
+			return 1;
+		return num * factorial(num-1);
+	}(5));
+	
+	document.write("factorial : ", result, "</br>");
+	</script>
+	
+</body>
+</html>

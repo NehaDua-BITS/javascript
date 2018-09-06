@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<p id="helloUser"></p>
+	
+	<script>
+
+	//1. Write to the browser
+	document.write("<br/>", "<br/>", "1) Writing multiple Strings to browser : ".fontcolor("red").bold(), "<br/>", "<br/>");
+	document.write("5 + 4 = ", 5 + 4, "<br/>");
+	document.write("5 * 4 = ", 5 * 4, "<br/>");
+	document.write("5 / 4 = ", 5 / 4, "<br/>");
+	document.write("5 % 4 = ", 5 % 4, "<br/>");
+	document.write("5 - 4 = ", 5 - 4, "<br/>");
+	document.write("String Conact : 5 + 4 = " + 5 + 4, "<br/>"); //this will convert it into string
+	document.write("5 + 4 = ", 5 + 4, " extra-arg1 ", " extra-arg2 ", "<br/>");  //can give any no. of args to it
+
+	//2. String conversion
+	document.write("<br/>", "<br/>", "2) String conversion : ".fontcolor("red").bold(), "<br/>", "<br/>");
+		
+	document.write("Converted to Number ('5.36') : ", Number("5.36"), "<br/>");
+	document.write("Converted to Int (\"5.36\") : ", parseInt("5.36"), "<br/>");   //escape quotes or use single and double quotes for differenciation
+	document.write("Converted to Float ('5.36') : ", parseFloat("5.36"), "<br/>");
+	
+	//3. String Operations
+	document.write("<br/>", "<br/>", "3) String operations : ".fontcolor("red").bold(), "<br/>", "<br/>");
+
+	var randomString = "A long string that " + "goes on and on"; //string conactenation
+	
+	document.write("length of string : ", randomString.length, "<br/>");  //length of string
+	
+	document.write("index of 'goes' : ", randomString.indexOf("goes"), "<br/>"); //index of string
+	
+	document.write("slice of string by both start and end index : ", randomString.slice(19, 23), "<br/>");  //slice(startindex, endindex) - gives substring
+	
+	document.write("slice of string from start index : ", randomString.slice(19), "<br/>");  //slice(startindex) - gives substring from start index to end of string
+
+	document.write("substring at index 19 of length 4 : ", randomString.substr(19, 4), "<br/>");  //substr(startindex, noOfCharacters) - gives substring
+	
+	document.write("substring starting from index 19 : ", randomString.substr(19), "<br/>");  //substr(startindex) - gives substring from starting index
+	
+	document.write("Replace : ", randomString.replace("and on", "forever"), "<br/>"); // replace(source, target)
+	
+	document.write("Char at index 5 : ", randomString.charAt(5), "<br/>"); //get character at index
+	
+	var stringArray = randomString.split(" ");  //split string based on space : string.split(separator, limit) => both params are optional Note: Separator can be character, regex, empty string or none
+	document.write("Split based on space => array length : ", stringArray.length, "<br/>");
+	document.write("Array : ", stringArray, "<br/>");	
+	
+	//for (var index in stringArray)
+		//document.write(stringArray[index], "<br/>");	
+		
+	stringArray = randomString.split("");  //if empty string is given, it splits based on characters
+	document.write("Split based on empty string => array length : ", stringArray.length, "<br/>");
+	document.write("Array : ", stringArray, "<br/>");	
+	//for (var index in stringArray)
+		//document.write(stringArray[index], "<br/>");	
+	
+	stringArray = randomString.split();  //if no separator given, it returns entire string
+	document.write("Split based on no separator => array length : ", stringArray.length, "<br/>");
+	document.write("Array : ", stringArray, "<br/>");	
+	//for (var index in stringArray)
+		//document.write(stringArray[index], "<br/>");	
+	
+	document.write("Trimmed string('  the spaces  ') : ", "  the spaces  ".trim(), "<br/>"); //trim spaces in beginning and end
+	
+	document.write("Upper case : ", randomString.toUpperCase(), "<br/>"); //upper case
+	document.write("Lower case : ", randomString.toLowerCase(), "<br/>"); //lower case
+
+	//4. String styling	
+	document.write("<br/>", "<br/>", "4) String styling methods : ".fontcolor("red").bold(), "<br/>", "<br/>");
+	
+	document.write("Big case : ", randomString.big(), "<br/>"); //displays string in big font; not standard; may not work as expected in all browsers; returns string in <big> tag	
+	document.write("Small case : ", randomString.small(), "<br/>"); 
+	document.write("Bold case : ", randomString.bold(), "<br/>"); 
+	document.write("Blue font : ", randomString.fontcolor("blue"), "<br/>"); 
+	document.write("sub case : ", randomString.sub(), "<br/>"); 
+	document.write("sup case : ", randomString.sup(), "<br/>"); 
+	document.write("strike case : ", randomString.strike(), "<br/>"); 
+	document.write("Italics : ", randomString.italics(), "<br/>"); 
+	document.write("font size : ", randomString.fontsize("8em"), "<br/>"); 
+	document.write("Hyperlink : ", randomString.link("http://google.com"), "<br/>"); 
+	
+	
+	</script>
+</body>
+</html>

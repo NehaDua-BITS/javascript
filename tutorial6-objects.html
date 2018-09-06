@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		
+	//objects
+	document.write("Object iteration : ".fontcolor("red"), "<br/>");
+	var customer = {"name" : "sumit arora", "age" : 27, "profile" : "developer"};
+	document.write("Object keys/properties : ", Object.keys(customer), "<br/>");	//it returns an array
+	document.write("No. of keys/properties : ", Object.keys(customer).length, "<br/>");
+	for (var key in customer)
+		document.write(key + " : " + customer[key] + "<br/>");
+		
+	</script>
+	
+</body>
+</html>

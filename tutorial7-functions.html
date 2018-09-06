@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<p id="helloUser"></p>
+
+	<script>
+	//function with unknown or variable no. of args
+	function getSum()  //forward declaration is reqd if func is there in different script tag else not required
+	{
+		document.write("No. of arguments for sum : ", arguments.length, " ", Object.keys(arguments).length, "<br/>");
+		document.write(" Args are : Spread operator: ", [...arguments], "<br/>");
+		document.write(" Args are : Array.from : ", Array.from(arguments), "<br/>");
+		document.write(" Args are : Array.apply : ", arguments.length == 1 ? [arguments[0]] : Array.apply(null, arguments), "<br/>");
+		document.write(" Args are : slice : ", Array.prototype.slice.call(arguments), "<br/>");  //slicing prevents optimization so better to copy args to new arrray than using slicing
+		document.write(" Args are : slice : ", [].slice.call(arguments), "<br/>");
+		
+		var sum = 0;
+		for (var i = 0; i < arguments.length; i++)
+		{
+			sum += arguments[i];
+		}
+		
+		return sum;
+	}	
+	</script>
+	
+	<script>
+		
+		function mult2(num)
+		{
+			return num * 2;
+		}
+		
+		function mult3(num)
+		{
+			return num * 3;
+		}
+		
+		//passing function as param to a function
+		function multiply(func, num)
+		{
+			return func(num);
+		}
+	
+		// function expression
+		var funcVar = function(num) {
+			return num * 5;
+		};
+		
+	document.write("multiply by 3 (5) : ", multiply(mult3, 5), "<br/>");
+	
+	document.write("multiply by 2 (5) : ", multiply(mult2, 5), "<br/>");
+
+	document.write("func expression multiply by 5 (10) : ", funcVar(10), "<br/>");
+	
+	document.write("get sum : ", getSum(2,1,4,3,10,30), "<br/>");
+
+	function msgAlert(msg)
+	{
+		alert(msg);
+	}
+	
+	</script>
+	
+	<a href="Javascript:void(0)" onclick="alert('hello!!');">Click Me</a>  <!-- Inline javascript; href part is to avoid reloading the page in case we are at bottom -->
+	<br/>
+	<a href="Javascript:void(0)" onclick="msgAlert('hello, how are you?');">Click Me Also</a>  <!-- calling javascript function -->
+	<br/>
+	<a href="Javascript:void(0)" onmouseover="this.style.color='red';" onmouseout="this.style.color='green';" onmousedown="this.text='leave me';" onmouseup="this.text='thanks';"
+	   ondblclick="this.text='you double clicked me!!';">Try me also</a>  <!-- calling mouse functions -->
+	
+</body>
+</html>
